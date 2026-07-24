@@ -3,9 +3,14 @@ import pandas as pd
 import joblib
 import os
 
-model = joblib.load("LR_insurance.pkl")
-scaler = joblib.load("insurance_scaler.pkl")
-encoded_columns = joblib.load("columns.pkl")
+# Folder where app2.py is located
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+
+# Load files using absolute paths
+model = joblib.load(os.path.join(BASE_DIR, "LR_insurance.pkl"))
+scaler = joblib.load(os.path.join(BASE_DIR, "insurance_scaler.pkl"))
+columns = joblib.load(os.path.join(BASE_DIR, "columns.pkl"))
+
 
 st.set_page_config(
     page_title="Insurance Cost Predictor",
