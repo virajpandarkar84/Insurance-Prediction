@@ -1,9 +1,10 @@
 import streamlit as st
 import pandas as pd
 import joblib
+import os
 
 model = joblib.load("LR_insurance.pkl")
-scaler = joblib.load("scaler.pkl")
+scaler = joblib.load("insurance_scaler.pkl")
 encoded_columns = joblib.load("columns.pkl")
 
 st.set_page_config(
